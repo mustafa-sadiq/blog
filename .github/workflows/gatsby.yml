@@ -71,8 +71,8 @@ jobs:
         uses: actions/cache@v3
         with:
           path: |
-            public
-            .cache
+            blog.mustafasadiq.com/public
+            blog.mustafasadiq.com/.cache
           key: ${{ runner.os }}-gatsby-build-${{ hashFiles('public') }}
           restore-keys: |
             ${{ runner.os }}-gatsby-build-
