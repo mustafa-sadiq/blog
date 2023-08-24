@@ -14,7 +14,7 @@ module.exports = {
       name: `Mustafa Sadiq`,
       summary: `who lives and works in New Jersey building useful things.`,
     },
-    description: `A starter blog demonstrating what Gatsby can do.`,
+    description: `A blog by Mustafa Sadiq.`,
     siteUrl: `https://blog.mustafasadiq.com/`,
     social: {
       linkedin: `mustafasadiq`,
