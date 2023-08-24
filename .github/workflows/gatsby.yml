@@ -29,8 +29,6 @@ defaults:
   run:
     shell: bash
     working-directory: ./blog.mustafasadiq.com
-  with:
-    working-directory: ./blog.mustafasadiq.com
 
 jobs:
   # Build job
@@ -60,6 +58,7 @@ jobs:
         with:
           node-version: "18"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
+          cache-dependency-path: '**/package-lock.json'
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v3
