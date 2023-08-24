@@ -29,6 +29,8 @@ defaults:
   run:
     shell: bash
     working-directory: ./blog.mustafasadiq.com
+  with:
+    working-directory: ./blog.mustafasadiq.com
 
 jobs:
   # Build job
