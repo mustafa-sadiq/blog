@@ -37,7 +37,10 @@ const Layout = ({ location, title, children }) => {
     <div className="global-wrapper" data-is-root-path={isRootPath}>
       <header className="global-header">{header}</header>
       <main>{children}</main>
-      <footer>© {new Date().getFullYear()}, Built with ❤️ by {data.site.siteMetadata?.author.name}</footer>
+      <footer>
+        © {new Date().getFullYear()}, Built with ❤️ by{" "}
+        {data.site.siteMetadata?.author.name}
+      </footer>
     </div>
   )
 }
