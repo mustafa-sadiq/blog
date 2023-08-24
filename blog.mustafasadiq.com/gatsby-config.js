@@ -15,9 +15,9 @@ module.exports = {
       summary: `who lives and works in New Jersey building useful things.`,
     },
     description: `A starter blog demonstrating what Gatsby can do.`,
-    siteUrl: `https://gatsbystarterblogsource.gatsbyjs.io/`,
+    siteUrl: `https://blog.mustafasadiq.com/`,
     social: {
-      twitter: `mustafasadiq`,
+      linkedin: `mustafasadiq`,
     },
   },
   plugins: [
@@ -110,8 +110,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `Gatsby`,
+        name: `blog.mustafasadiq.com`,
+        short_name: `Blog`,
         start_url: `/`,
         background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website
