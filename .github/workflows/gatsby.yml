@@ -28,19 +28,17 @@ concurrency:
 defaults:
   run:
     shell: bash
+    working-directory: ./blog.mustafasadiq.com
 
 jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
-    env:
-      working-directory: ./blog.mustafasadiq.com
     steps:
       - name: Checkout
         uses: actions/checkout@v3
       - name: Detect package manager
         id: detect-package-manager        
-        working-directory: ${{ env.working-directory }}
         run: |
           if [ -f "${{ github.workspace }}/yarn.lock" ]; then
             echo "manager=yarn" >> $GITHUB_OUTPUT
@@ -67,7 +65,6 @@ jobs:
           #
           # You may remove this line if you want to manage the configuration yourself.
           static_site_generator: gatsby          
-          working-directory: ${{ env.working-directory }}
       - name: Restore cache
         uses: actions/cache@v3
         with:
@@ -76,20 +73,16 @@ jobs:
             .cache
           key: ${{ runner.os }}-gatsby-build-${{ hashFiles('public') }}
           restore-keys: |
-            ${{ runner.os }}-gatsby-build-          
-          working-directory: ${{ env.working-directory }}
-      - name: Install dependencies      
-        working-directory: ${{ env.working-directory }}
+            ${{ runner.os }}-gatsby-build-
+      - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
-      - name: Build with Gatsby        
-        working-directory: ${{ env.working-directory }}
+      - name: Build with Gatsby
         env:
           PREFIX_PATHS: 'true'
         run: ${{ steps.detect-package-manager.outputs.manager }} run build
       - name: Upload artifact        
         uses: actions/upload-pages-artifact@v2
-        with:          
-          working-directory: ${{ env.working-directory }}
+        with:
           path: ./public
 
   # Deployment job
