@@ -19,7 +19,7 @@ Markdown syntax is easy, widely used, even you may have used it to type Bold or 
 - You can highlight a code snippet `print("hello world!")` by enclosing it in backticks.
 - You can create a formatted list by using a dash:
     - This is a sub list.
-- You can mention a quote: 
+- You can mention a quote by starting it with a Angle bracket: 
     > Did you see Mustafa's new blog?
 
 All without moving your fingers off the keyboard.
